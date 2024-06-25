@@ -5,7 +5,7 @@
 "scripts": {
   "dev": "nodemon server.js",
   "build": "next build",
-  "start": "next start"
+  "start": "nodemon server.js"
 },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
