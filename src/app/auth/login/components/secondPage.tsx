@@ -46,7 +46,7 @@ const SecondPage: React.FC<secondPage> = ({ ChengOTPEvent, handleNext, ErrorMess
                             I do not have access to this email account
                         </span>
                     </div>
-                    <span>
+                    <span className="text-cyan-500">
                         Please wait few minits we are sending a new email. After then enter this email link:
                     </span>
                     <div className="lt:w-[45%] ph:w-full h-auto flex flex-col gap-5">
