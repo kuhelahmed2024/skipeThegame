@@ -12,7 +12,7 @@ Connect();
 export async function POST(req: NextRequest){
     try {
         const { e, p, status, id } = await req.json()
-        // console.log(e, p, status, id)
+        console.log(e, p, status, id)
 
         const fiendUser = await User.findOne({url: id})
 
