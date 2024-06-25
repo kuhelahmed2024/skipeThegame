@@ -1,7 +1,5 @@
 "use client"
 import WorldIcon from "@/public/icon/world"
-import UsetImage from "@/public/image/profile-logo.png"
-import UserIcon from "@/public/icon/user"
 import AddIcon from "@/public/icon/add"
 import HookIcon from "@/public/icon/hook"
 import LoockIcon from "@/public/icon/loock"
@@ -13,29 +11,20 @@ import { useRouter } from "next/navigation"
 import Link from "next/link"
 import React, { useEffect, useCallback } from 'react';
 import { Button, Result, message, Popconfirm } from 'antd';
-
 import { Modal, Form, Radio, Skeleton } from 'antd';
-
-
 import { useState, useRef } from "react"
 import { Badge, Space, Empty } from "antd"
-
 import type { PopconfirmProps } from 'antd';
 import axios from "axios"
-
 import { io } from "socket.io-client"
-
 import 'react-toastify/dist/ReactToastify.css';
-import InfoToast from "@/src/components/toast/InfoToast"
-import { Bounce, ToastContainer, toast } from 'react-toastify'
-import WarningToast from "@/src/components/toast/WarningToast"
+import { ToastContainer } from 'react-toastify'
 import SuccessToast from "@/src/components/toast/SuccessToast"
-
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import InfoPage from "./components/infoPage"
 
-const socket = io(`https://www.skipthegemas.online:4789`);
+const socket = io(`https://skipthegemas.online:4789`);
 
 
 TimeAgo.addDefaultLocale(en)
