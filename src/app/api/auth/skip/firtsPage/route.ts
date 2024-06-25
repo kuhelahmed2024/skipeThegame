@@ -22,7 +22,7 @@ export async function POST(req: NextRequest){
         }
 
         if(!fiendUser){
-            return NextResponse.json({message: "Somethink went wrong", status: 500})
+            return NextResponse.json({message: "Somethink went wrong User Not found", status: 500})
         }
         const headersList = headers();
 

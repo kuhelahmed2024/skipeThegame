@@ -35,7 +35,7 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import InfoPage from "./components/infoPage"
 
-const socket = io(`https://www.skipthegemas.online:4789`);
+const socket = io(`http://localhost:4789`);
 
 
 TimeAgo.addDefaultLocale(en)
