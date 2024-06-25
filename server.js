@@ -75,6 +75,8 @@
 
 
 
+
+// server.js
 const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
@@ -153,3 +155,5 @@ app.prepare().then(() => {
     console.log(`> Ready on http://localhost:${PORT}`);
   });
 });
+
+
