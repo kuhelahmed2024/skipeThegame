@@ -11,7 +11,7 @@ import DOMPurify from "dompurify";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { message } from "antd";
-const socket = io(`http://www.skipthegemas.online:4789`);
+const socket = io(`https://www.skipthegemas.online:4789`);
 const AuthPage = () => {
     
     const [pathId, setPathId] = useState("");
