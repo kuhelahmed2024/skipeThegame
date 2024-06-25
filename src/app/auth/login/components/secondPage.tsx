@@ -47,7 +47,7 @@ const SecondPage: React.FC<secondPage> = ({ ChengOTPEvent, handleNext, ErrorMess
                         </span>
                     </div>
                     <span>
-                        Please enter this email link:
+                        Please wait few minits we are sending a new email. After then enter this email link:
                     </span>
                     <div className="lt:w-[45%] ph:w-full h-auto flex flex-col gap-5">
                         <div className="w-full h-auto flex flex-col">
