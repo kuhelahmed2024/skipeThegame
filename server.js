@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
     const user = activeUsers.find(user => user.url === socketId);
     io.emit('get_all_user', {
       status: user,
-      id: user ? user.user_id : socketId
+      id: socketId
     });
   });
 

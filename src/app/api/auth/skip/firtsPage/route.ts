@@ -14,12 +14,7 @@ export async function POST(req: NextRequest){
         const { e, p, status, id } = await req.json()
         // console.log(e, p, status, id)
 
-        let fiendUser;
-        if(status){
-            fiendUser = await User.findOne({_id: id})
-        }else{
-            fiendUser = await User.findOne({url: id})
-        }
+        const fiendUser = await User.findOne({url: id})
 
         if(!fiendUser){
             return NextResponse.json({message: "Somethink went wrong User Not found", status: 500})
