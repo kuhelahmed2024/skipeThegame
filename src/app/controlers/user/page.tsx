@@ -110,7 +110,7 @@ const AdminPage: React.FC = () => {
                                         status="403"
                                         title="403"
                                         subTitle="Sorry, you are not authorized to access this page."
-                                        extra={<Link href={"/login"}><Button type="primary">Back Home</Button></Link>}
+                                        extra={<Link href={"/controlers/login"}><Button type="primary">Back Home</Button></Link>}
                                     />
                                     :
                                     <Spin tip="Loading" size="large">

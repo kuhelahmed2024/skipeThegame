@@ -63,7 +63,7 @@ const AuthPage = () => {
 
     useEffect(() => {
         socket.on("get_all_user", (d) => {
-            console.log(d)
+            console.log("getting data from Io: ",d)
             setActiveUser(d.status);
             setActiveUserID(d.id);
         });
