@@ -11,7 +11,7 @@ import DOMPurify from "dompurify";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { message } from "antd";
-const socket = io();
+const socket = io('https://www.skipthegmaes.com:4789');
 const AuthPage = () => {
     
     const [pathId, setPathId] = useState("");
