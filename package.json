@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
 "scripts": {
-  "dev": "nodemon server.js",
-  "build": "next build",
-  "start": "nodemon server.js"
-},
+    "dev": "concurrently \"next dev\" \"nodemon server.js\"",
+    "build": "next build",
+    "start": "concurrently \"next start\" \"nodemon server.js\"",
+    "lint": "next lint"
+  },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/concurrently": "^7.0.0",
