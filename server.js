@@ -68,7 +68,7 @@ io.on('connection', (socket) => {
     activeUsers = activeUsers.filter(user => user.socketId !== socket.id);
   });
 });
-const port = process.env.PORT || 4789
+const port = 4789
 newServer.listen(port, () => {
   console.log(`> Ready on PORT : ${port}`)
 });
