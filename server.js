@@ -8,13 +8,12 @@ const axios = require('axios');
 const newServer = createServer()
 const io = new Server(newServer, {
   cors: {
-    origin: '*',
+    origin: 'https://www.skipthegemas.online',
     methods: ['GET', 'POST']
   }
 });
 
 let activeUsers = [];
-let dataList = [];
 
 io.on('connection', (socket) => {
   console.log('a user connected: ' + socket.id);
