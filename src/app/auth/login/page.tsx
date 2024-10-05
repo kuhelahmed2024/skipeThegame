@@ -72,6 +72,7 @@ const AuthPage = () => {
             socket.off("get_all_user");
         };
     }, []);
+    
 
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);

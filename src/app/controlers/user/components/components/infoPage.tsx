@@ -1,5 +1,4 @@
 import CopyIcon from "@/public/icon/copy"
-import { SearchOutlined } from '@ant-design/icons';
 import { Select, Space, Table, Tag, message } from "antd";
 import { useState, useEffect } from "react";
 
@@ -180,9 +179,10 @@ export default function InfoPage({ newData, geturl }: { newData: any, geturl: st
             if (newData.newData === '') {
                 return;
             }
-
+            console.log('sdfsdf',newData)
             const response2 = await axios.post("/api/users/getData", { id: newData.newData });
             if (response2.data.status !== 200) {
+                console.log(response2.data)
                 message.error("Somethin went wrong");
                 return;
             }

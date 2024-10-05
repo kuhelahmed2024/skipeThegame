@@ -139,7 +139,7 @@ export default function Login() {
                                         <span className="text-sm text-slate-700 hover:text-red-500 hover:underline decoration-red-500 hover:text-base cursor-pointer transition-all duration-150">
                                             Forget Pass !
                                         </span>
-                                    </Link> */}
+                                </Link> */}
                         </div>
                     </div>
                     <div className="w-full h-auto flex flex-col justify-center items-center gap-3">
